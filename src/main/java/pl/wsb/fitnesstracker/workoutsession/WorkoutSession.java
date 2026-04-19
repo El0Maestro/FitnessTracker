@@ -13,7 +13,7 @@ public class WorkoutSession {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @ManyToOne
-    @JoinColumn(name = "Training", nullable = false)
+    @JoinColumn(name = "training_id", nullable = false)
     private Training training_id;
 
     private LocalDateTime timestamp;
