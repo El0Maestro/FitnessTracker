@@ -1,14 +1,20 @@
 package pl.wsb.fitnesstracker.workoutsession;
 
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
+import java.time.LocalDateTime;
+
+@Entity
 // TODO: Define the Event entity with appropriate fields and annotations
 public class WorkoutSession {
 
     @Id
-    private int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @ManyToOne
+    @JoinColumn(name = "Training", nullable = false)
     private int trainingId;
-    private String timestamp;
+    private LocalDateTime timestamp;
     private double startLatitude;
     private double startLongitude;
     private double endLatitude;
